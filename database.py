@@ -1,6 +1,6 @@
 import sqlite3
 from pathlib import Path
-from tabulate import tabulate
+from tabulate import tabulate   # type: ignore #   tabulate allows us to see the database in a better format
 
 #   create database/establish connection
 file_path = Path(__file__).parent / 'network_data.db'
@@ -25,9 +25,11 @@ def store(results):
     for host, status in results.items():
         command.execute('INSERT INTO data (IP, STATUS) VALUES (?, ?)', (host, status))
     
+    #   commit changes
     conn.commit()
     command.execute('SELECT * FROM data')
     
     rows = command.fetchall()
     headers = [description[0] for description in command.description]
-    print(tabulate(rows, headers=headers, tablefmt='grid'))
+
+    return  tabulate(rows, headers=headers, tablefmt='grid')
