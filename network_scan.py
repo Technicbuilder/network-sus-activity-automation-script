@@ -8,5 +8,5 @@ def scan_network():
     
     return {host:scanner[host].state() for host in scanner.all_hosts()} #   returns as a dictionary {host:host.statues}
     
-
-print(scan_network())
+    # returns dictionary with values, e.g.:
+    # {host:host.status, host:host.status, host:host.status ....}
