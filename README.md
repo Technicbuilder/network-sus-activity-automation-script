@@ -18,7 +18,7 @@ If any suspicous activityis to occur, it will alert me using gmail/somrthing (no
 main.py:
 network_scan()  COMPLETE
 normalize_results()
-compare_with_db() 50% DONE (need to compare with results in database - tablew is stored)
+compare_with_db() 50% DONE (compare is complete, need to implement sus counter)
 store_snapshot()
 notify_changes()
 -------------------------------
